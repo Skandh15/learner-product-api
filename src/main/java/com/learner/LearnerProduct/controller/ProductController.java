@@ -1,7 +1,5 @@
 package com.learner.LearnerProduct.controller;
 
-import java.util.List;
-
 import com.learner.LearnerProduct.entity.Product;
 import com.learner.LearnerProduct.exception.ResourceNotFoundException;
 import com.learner.LearnerProduct.repository.ProductRepository;
@@ -15,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
