@@ -12,7 +12,8 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @Column(name = "category_id")
+    private long categoryId;
 
     @Column(name = "category_title")
     private String categoryTitle;
@@ -26,8 +27,8 @@ public class Category {
     public Category() {
     }
 
-    public Category(long id, String categoryTitle, String categoryImageUrl, String categoryRoute) {
-        this.id = id;
+    public Category(long categoryId, String categoryTitle, String categoryImageUrl, String categoryRoute) {
+        this.categoryId = categoryId;
         this.categoryTitle = categoryTitle;
         this.categoryImageUrl = categoryImageUrl;
         this.categoryRoute = categoryRoute;
