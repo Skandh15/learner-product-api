@@ -1,4 +1,4 @@
-package com.learner.LearnerProduct.controller;
+package com.learner.LearnerProduct.controller.products;
 
 import com.learner.LearnerProduct.entity.Product;
 import com.learner.LearnerProduct.exception.ResourceNotFoundException;
@@ -25,7 +25,8 @@ public class ProductController {
     private ProductRepository productRepository;
 
     // get all products
-    @GetMapping
+//    @CrossOrigin("*")
+    @GetMapping("get-products")
     public List<Product> getAllProducts() {
         return this.productRepository.findAll();
     }
@@ -37,7 +38,7 @@ public class ProductController {
     }
 
     // create Product
-    @PostMapping
+    @PostMapping("add-product")
     public String createProduct(@RequestBody CreateProductRequestBean createProductRequestBean) {
         createProductRequestBean.getItems().forEach(item -> {
             Product product = new Product();

@@ -32,13 +32,13 @@ public class CategoryController {
         return "Created";
     }
 
-    @PostMapping("/create/categories")
+    @PostMapping("/create-categories")
     public String createCategory(@RequestBody CategoryRequestBean categoryRequestBean) {
         return getString(categoryRequestBean, this.categoryRepository);
     }
 
-    //    @CrossOrigin("*")
-    @GetMapping
+//    @CrossOrigin("*")
+    @GetMapping("/get-category-details")
     public List<Category> getAllCategories() {
         return this.categoryRepository.findAll();
     }
