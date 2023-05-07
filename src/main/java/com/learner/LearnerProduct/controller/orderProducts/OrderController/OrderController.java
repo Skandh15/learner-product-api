@@ -25,6 +25,9 @@ public class OrderController {
     // Create an order
     @PostMapping("/place-order")
     public ResponseEntity<?> saveOrder(@RequestBody OrderBean orderBean) {
+        if (orderBean == null || orderBean.getEmailId() == null || orderBean.getProducts() == null) {
+            return ResponseEntity.badRequest().build();
+        }
         try {
             orderBean.getProducts().forEach(item -> {
                 Order order = new Order();
