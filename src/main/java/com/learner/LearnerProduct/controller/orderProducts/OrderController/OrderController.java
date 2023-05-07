@@ -23,6 +23,7 @@ public class OrderController {
     private RestTemplate restTemplate;
 
     // Create an order
+    @CrossOrigin("*")
     @PostMapping("/place-order")
     public ResponseEntity<?> saveOrder(@RequestBody OrderBean orderBean) {
         if (orderBean == null || orderBean.getEmailId() == null || orderBean.getProducts() == null) {
@@ -46,6 +47,7 @@ public class OrderController {
     }
 
     // Get Order using userId
+    @CrossOrigin("*")
     @GetMapping("get-order-details")
     public ResponseEntity<Object> getOrders(@RequestParam long userId, HttpServletResponse response) {
         UserClient userClient = new UserClient();
